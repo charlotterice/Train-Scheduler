@@ -49,15 +49,26 @@ $("#add-train-button").on("click", function(event) {
   $("#first-train-time").val("");
   $("#frequency").val("");
 });
+
+//pulls information from firebase
 database.ref().on("child_added", function(childSnapshot) {
   console.log(childSnapshot.val());
   var trainName = childSnapshot.val().name;
   var destination = childSnapshot.val().destination;
   var firstTrain = childSnapshot.val().first;
   var frequency = childSnapshot.val().frequency;
-
+  var currentTime = moment();
+  var timeArr = firstTrain.split(":");
+        var trainTime = moment().hours(timeArr[0]).minutes(timeArr[1]);
+ //check train values
   console.log(trainName);
   console.log(destination);
   console.log(firstTrain);
   console.log(frequency);
+
+  console.log(currentTime.format('MMMM Do YYYY, h:mm:ss a'));
+  var firstTimeConverted = moment(trainTime);
+  console.log(firstTimeConverted);
+  var timeDifference = moment().diff(moment(firstTimeConverted),"minutes");
+  console.log("Time difference"+timeDifference);
 });
