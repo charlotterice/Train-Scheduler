@@ -49,3 +49,15 @@ $("#add-train-button").on("click", function(event) {
   $("#first-train-time").val("");
   $("#frequency").val("");
 });
+database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());
+  var trainName = childSnapshot.val().name;
+  var destination = childSnapshot.val().destination;
+  var firstTrain = childSnapshot.val().first;
+  var frequency = childSnapshot.val().frequency;
+
+  console.log(trainName);
+  console.log(destination);
+  console.log(firstTrain);
+  console.log(frequency);
+});
