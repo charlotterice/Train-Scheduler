@@ -32,24 +32,21 @@
     <div class="container" id="data-area">
       <div class="card text-white bg-info mb-3">
         <div class="card-header">Current Train Schedule</div>
-        <div class="card-body"></div>
-        <div class="row">
-          <div class="col-lg">
-            Train Name
-          </div>
-          <div class="col-lg">
-            Destination
-          </div>
-          <div class="col-lg">
-            Frequency (min)
-          </div>
-          <div class="col-lg">
-            Next Arrival
-          </div>
-          <div class="col-lg">
-            Minutes Away
-          </div>
-          <div></div>
+        <div class="card-body">
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                          </tr>
+                        </thead>
+                        <tbody id = "incoming-data">
+                    
+                        </tbody>
+                      </table>
         </div>
       </div>
     </div>
