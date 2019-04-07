@@ -12,6 +12,8 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Pesonal CSS -->
     <link rel="stylesheet" href="./assets/style.css" />
 
@@ -32,7 +34,7 @@
     <div class="container" id="data-area">
       <div class="card text-white bg-info mb-3">
         <div class="card-header">Current Train Schedule</div>
-        <div class="card-body">
+        <div class="card-body" id="display-data">
                 <table class="table table-striped">
                         <thead>
                           <tr>
@@ -50,5 +52,32 @@
         </div>
       </div>
     </div>
+    <div class = container id =form-area>
+    <div class="card text-white bg-info mb-3">
+        <div class="card-header">Add Train</div>
+        <div class="card-body" id="train-form">
+            <form>
+                <div class="form-group">
+                  <label for="train-name">Train Name</label>
+                  <input type="text" class="form-control" id="train-name">
+                </div>
+                <div class="form-group">
+                  <label for="destination">Destination</label>
+                  <input type="text" class="form-control" id="destination">
+                </div>
+                <div class="form-group">
+                    <label for="first-train-time">First Train Time (HH:mm - miliary time)</label>
+                    <input type="time" class="form-control" id="first-train-time">
+                  </div><div class="form-group">
+                      <label for="frequency">Frequency(mins)</label>
+                      <input type="number" class="form-control" id="frequency">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id = "add-train-button">Submit</button>
+                </div>
+              </form>
+        </div>
+      </div>
+      </div>
+      <script src="assets/app.js"></script>
   </body>
 </html>
