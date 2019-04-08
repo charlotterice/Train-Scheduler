@@ -23,61 +23,64 @@
   </head>
 
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <!-- Train tracker -->
       <div class="container">
+        <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
         <br />
         <h1 class="display-4">Train Schedule</h1>
         <br />
         <p class="lead">Upcoming train schedule</p>
       </div>
-    </div>
-    <br />
-    <div class="container" id="data-area">
-      <div class="card text-white bg-info mb-3">
-        <div class="card-header">Current Train Schedule</div>
-        <div class="card-body" id="display-data">
-                <table class="table table-striped">
+      <div class="row">
+        <div class = "col-md-12">
+<!-- Current Trains -->
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Current Train Schedule</div>
+                <div class="card-body">
+                    <table class="table table-striped" id="train-table">
                         <thead>
-                          <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
-                          </tr>
-                        </thead>
-                        <tbody id = "incoming-data">
-                    
-                        </tbody>
+                            <tr>
+                              <th scope="col">Train Name</th>
+                              <th scope="col">Destination</th>
+                              <th scope="col">Frequency (min)</th>
+                              <th scope="col">Next Arrival</th>
+                              <th scope="col">Minutes Away</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
                       </table>
+                </div>
+            </div>
         </div>
       </div>
-    </div>
-    <div class = container id =form-area>
-    <div class="card text-white bg-info mb-3">
-        <div class="card-header">Add Train</div>
-        <div class="card-body" id="train-form">
-            <form>
-                <div class="form-group">
-                  <label for="train-name">Train Name</label>
-                  <input type="text" class="form-control" id="train-name">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Add Train</div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="train-name">Train Name</label>
+                          <input type="text" class="form-control" id="train-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="destination">Destination</label>
+                          <input type="text" class="form-control" id="destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="first-train-time">First Train Time (HH:mm - miliary time)</label>
+                            <input type="time" class="form-control" id="first-train-time">
+                          </div><div class="form-group">
+                              <label for="frequency">Frequency(mins)</label>
+                              <input type="number" class="form-control" id="frequency">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id = "add-train-button">Submit</button>
+                        </div>
+                      </form>
                 </div>
-                <div class="form-group">
-                  <label for="destination">Destination</label>
-                  <input type="text" class="form-control" id="destination">
-                </div>
-                <div class="form-group">
-                    <label for="first-train-time">First Train Time (HH:mm - miliary time)</label>
-                    <input type="time" class="form-control" id="first-train-time">
-                  </div><div class="form-group">
-                      <label for="frequency">Frequency(mins)</label>
-                      <input type="number" class="form-control" id="frequency">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id = "add-train-button">Submit</button>
-                </div>
-              </form>
+            </div>
         </div>
-      </div>
       </div>
       <script src="assets/app.js"></script>
   </body>

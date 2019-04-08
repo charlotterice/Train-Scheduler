@@ -71,4 +71,12 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(firstTimeConverted);
   var timeDifference = moment().diff(moment(firstTimeConverted),"minutes");
   console.log("Time difference"+timeDifference);
+
+  var newRow = $("<tr>").append(
+    $("<td>").html(trainName),
+    $("<td>").html(destination),
+    $("<td>").html(firstTrain),
+    $("<td>").html(frequency)
+  );
+  $("#train-table > tbody").append(newRow);
 });
