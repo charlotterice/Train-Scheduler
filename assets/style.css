@@ -1,3 +1,19 @@
+
+body{
+    background:black;
+}
+.jumbotron{
+    background: url(./images/vasco1.jpg) center center / cover no-repeat;
+    color:whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.opener{
+    background: black;
+    opacity: 0.75;
+    text-align: center;
+   padding: 20px;
+}
 .card-body{
     background-color: white;
 }
