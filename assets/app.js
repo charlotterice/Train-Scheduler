@@ -67,6 +67,8 @@ database.ref().on("child_added", function(childSnapshot) {
   var remainder = timeDifference % frequency;
   var minutesTilNext = frequency - remainder;
   var nextTrainTime = moment().add(minutesTilNext,"minutes");
+  var nextTrainTimeConverted = moment(nextTrainTime).format("hh:mm");
+
   //check train values
   console.log("Train Name: " + trainName);
   console.log("Train Destination: " + destination);
@@ -83,7 +85,7 @@ database.ref().on("child_added", function(childSnapshot) {
     $("<td>").html(trainName),
     $("<td>").html(destination),
     $("<td>").html(frequency),
-    $("<td>").html(nextTrainTime),
+    $("<td>").html(nextTrainTimeConverted),
     $("<td>").html(minutesTilNext)
   );
   $("#train-table > tbody").append(newRow);
